@@ -1,0 +1,58 @@
+{
+    "name": "larapulse/support",
+    "type": "library",
+    "description": "Handy PHP functions",
+    "keywords": [
+        "larapulse",
+        "support"
+    ],
+    "homepage": "https://github.com/larapulse/support",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/larapulse/support/issues",
+        "source": "https://github.com/larapulse/support"
+    },
+    "authors": [
+        {
+            "name": "Sergey Podgornyy",
+            "email": "sergey.podgornyy@yahoo.de",
+            "homepage": "http://larapulse.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~7.0",
+        "illuminate/support": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~6.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larapulse\\Support\\": "src"
+        },
+        "files": [
+            "src/array_functions.php",
+            "src/string_functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larapulse\\Support\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
