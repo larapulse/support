@@ -32,11 +32,20 @@ $ composer require larapulse/support
 
 ## Usage
 
-### **TODO**
+This package contains some useful functions that can be used for different cases, such as:
 
 ``` php
-$skeleton = new Larapulse\Support();
-echo $skeleton->echoPhrase('Hello, LaraPulse!');
+$initial = [
+    'environment'   => 'dev',
+    'app_start'     => date('Y-m-d H:i:s'),
+    'options'       => [
+        'test'  => true,
+        'debug' => true,
+        'log'   => 'notice'.
+    ],
+];
+
+$hash = md5(implode('|', array_flatten_assoc($initial)));
 ```
 
 ## Change log
