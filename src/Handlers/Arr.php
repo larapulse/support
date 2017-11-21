@@ -15,10 +15,10 @@ class Arr
      */
     public static function flatten(array $array, $depth = INF) : array
     {
-        $depth = is_int($depth) ? max($depth, 1) : INF;
+        $depth = is_int($depth) ? max($depth, 0) : INF;
 
         return array_reduce($array, function ($result, $item) use ($depth) {
-            if (!is_array($item)) {
+            if (!is_array($item) || $depth === 0) {
                 return array_merge($result, [$item]);
             } elseif ($depth === 1) {
                 return array_merge($result, array_values($item));
@@ -39,10 +39,10 @@ class Arr
     public static function flattenAssoc(array $array, $depth = INF) : array
     {
         $result = [];
-        $depth = is_int($depth) ? max($depth, 1) : INF;
+        $depth = is_int($depth) ? max($depth, 0) : INF;
 
         foreach ($array as $key => $value) {
-            if (is_array($value) && $depth > 1) {
+            if (is_array($value) && $depth >= 1) {
                 $result = self::flattenAssoc($value, $depth - 1) + $result;
             } else {
                 $result[$key] = $value;

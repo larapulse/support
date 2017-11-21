@@ -4,6 +4,14 @@ All notable changes to `larapulse/support` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 2017-11-21
+
+### Added
+- Unit tests for `Larapulse\Support\Handlers\Arr` class
+
+### Changed
+- `array_flatten`, `array_flatten_assoc` function not flatten array, if wrong depth defined
+
 ## 2017-11-20
 
 ### Added
@@ -12,3 +20,4 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - `Larapulse\Support\Helpers\DataTypes` class
 - Array functions: `array_flatten`, `array_flatten_assoc`, `array_depth`, `is_array_of_type`, `is_array_of_types`, `is_array_of_instance`, `array_is_assoc`, `array_only`, `array_head`, `array_last`
 - String functions: `str_pop`, `str_shift`, `str_cut_start`, `str_cut_end`, `str_lower`, `str_upper`, `str_title`, `str_length`, `str_words`, `str_substr`, `str_ucfirst`, `str_starts_with`, `str_ends_with`
+- Unit tests for `Larapulse\Support\Handlers\Arr` class

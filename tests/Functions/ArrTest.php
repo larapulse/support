@@ -1,10 +1,10 @@
 <?php
 
-namespace Larapulse\Support;
+namespace Larapulse\Support\Tests\Functions;
 
 use PHPUnit\Framework\TestCase;
 
-class StrHandlerTest extends TestCase
+class ArrTest extends TestCase
 {
     /**
      * Test that true does in fact equal true

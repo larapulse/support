@@ -1,6 +1,6 @@
 <?php
 
-namespace Larapulse\Support;
+namespace Larapulse\Support\Tests;
 
 use Larapulse\Support\Helpers\DataTypes;
 use PHPUnit\Framework\TestCase;
