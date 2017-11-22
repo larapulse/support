@@ -22,6 +22,7 @@
     ],
     "require": {
         "php": "~7.0",
+        "ext-mbstring": "*",
         "illuminate/support": "^5.5"
     },
     "require-dev": {

@@ -1,6 +1,7 @@
 <?php
 
 use Larapulse\Support\Handlers\Str;
+use Larapulse\Support\Handlers\RegEx;
 use Illuminate\Support\Str as IlluminateStr;
 
 if (!function_exists('str_pop')) {
@@ -8,12 +9,13 @@ if (!function_exists('str_pop')) {
      * Pop the character off the end of string
      *
      * @param string $str
+     * @param string $encoding
      *
      * @return bool|string
      */
-    function str_pop(string &$str)
+    function str_pop(string &$str, string $encoding = null)
     {
-        return Str::pop($str);
+        return Str::pop($str, $encoding);
     }
 }
 
@@ -22,12 +24,42 @@ if (!function_exists('str_shift')) {
      * Shift a character off the beginning of string
      *
      * @param string $str
+     * @param string $encoding
      *
      * @return bool|string
      */
-    function str_shift(string &$str)
+    function str_shift(string &$str, string $encoding = null)
     {
-        return Str::shift($str);
+        return Str::shift($str, $encoding);
+    }
+}
+
+if (!function_exists('is_regex')) {
+    /**
+     * Validate if RegEx statement is valid
+     *
+     * @param string $regexStatement
+     *
+     * @return bool
+     */
+    function is_regex(string $regexStatement) : bool
+    {
+        return RegEx::isValid($regexStatement);
+    }
+}
+
+if (!function_exists('str_prepare_regex')) {
+    /**
+     * Prepare string to be safety used in regex
+     *
+     * @param string $string
+     * @param string $quotes
+     *
+     * @return string
+     */
+    function str_prepare_regex(string $string, $quotes = '/') : string
+    {
+        return RegEx::prepare($string, $quotes);
     }
 }
 
@@ -37,12 +69,14 @@ if (!function_exists('str_cut_start')) {
      *
      * @param string $str
      * @param string $subString
+     * @param bool   $repeat
+     * @param bool   $caseSensitive
      *
      * @return string
      */
-    function str_cut_start(string $str, string $subString = ' ') : string
+    function str_cut_start(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = false) : string
     {
-        return Str::cutStart($str, $subString);
+        return Str::cutStart($str, $subString, $repeat, $caseSensitive);
     }
 }
 
@@ -52,12 +86,14 @@ if (!function_exists('str_cut_end')) {
      *
      * @param string $str
      * @param string $subString
+     * @param bool   $repeat
+     * @param bool   $caseSensitive
      *
      * @return string
      */
-    function str_cut_end(string $str, string $subString = ' ') : string
+    function str_cut_end(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = false) : string
     {
-        return Str::cutEnd($str, $subString);
+        return Str::cutEnd($str, $subString, $repeat, $caseSensitive);
     }
 }
 
