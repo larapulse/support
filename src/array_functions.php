@@ -22,11 +22,12 @@ if (!function_exists('array_flatten_assoc')) {
      * Flatten a multi-dimensional array into a single level with saving keys
      *
      * @param  array  $array
+     * @param  int   $depth
      * @return array
      */
-    function array_flatten_assoc(array $array) : array
+    function array_flatten_assoc(array $array, $depth = INF) : array
     {
-        return Arr::flattenAssoc($array);
+        return Arr::flattenAssoc($array, $depth);
     }
 }
 
@@ -100,45 +101,5 @@ if (!function_exists('array_is_assoc')) {
     function array_is_assoc(array $array) : bool
     {
         return IlluminateArr::isAssoc($array);
-    }
-}
-
-if (!function_exists('array_only')) {
-    /**
-     * Get a subset of the items from the given array
-     *
-     * @param  array  $array
-     * @param  array|string  $keys
-     * @return array
-     */
-    function array_only($array, $keys) : array
-    {
-        return IlluminateArr::only($array, $keys);
-    }
-}
-
-if (!function_exists('array_head')) {
-    /**
-     * Get the first element of an array. Useful for method chaining
-     *
-     * @param  array  $array
-     * @return mixed
-     */
-    function array_head($array)
-    {
-        return reset($array);
-    }
-}
-
-if (!function_exists('array_last')) {
-    /**
-     * Get the last element from an array
-     *
-     * @param  array  $array
-     * @return mixed
-     */
-    function array_last($array)
-    {
-        return end($array);
     }
 }

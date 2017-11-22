@@ -1,6 +1,6 @@
 <?php
 
-namespace Larapulse\Support;
+namespace Larapulse\Support\Tests;
 
 use Larapulse\Support\Helpers\DataTypes;
 use PHPUnit\Framework\TestCase;
@@ -9,9 +9,6 @@ class DataTypesTest extends TestCase
 {
     const SOME_UNKNOWN_TYPE = 'unknown';
 
-    /**
-     * Test that true does in fact equal true
-     */
     public function testGuessAlias()
     {
         $this->assertSame(DataTypes::FLOAT_TYPE, DataTypes::guessFromAlias(DataTypes::FLOAT_TYPE));
