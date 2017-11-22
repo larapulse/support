@@ -52,8 +52,12 @@ class Str
      *
      * @return string
      */
-    public static function cutStart(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = true) : string
-    {
+    public static function cutStart(
+        string $str,
+        string $subString = ' ',
+        bool $repeat = false,
+        bool $caseSensitive = true
+    ) : string {
         $prepared = RegEx::prepare($subString, '/');
         $regex = sprintf(
             '/^%s/%s',
@@ -77,8 +81,12 @@ class Str
      *
      * @return string
      */
-    public static function cutEnd(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = true) : string
-    {
+    public static function cutEnd(
+        string $str,
+        string $subString = ' ',
+        bool $repeat = false,
+        bool $caseSensitive = true
+    ) : string {
         $prepared = RegEx::prepare($subString, '/');
         $regex = sprintf(
             '/%s$/%s',

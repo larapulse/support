@@ -122,7 +122,7 @@ class StrTest extends TestCase
     public function testSubstr()
     {
         $input = 'string';
-        $funcResult = str_substr($input,2);
+        $funcResult = str_substr($input, 2);
         $classResult = IlluminateStr::substr($input, 2);
 
         $this->assertEquals($classResult, $funcResult);

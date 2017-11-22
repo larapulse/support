@@ -74,8 +74,12 @@ if (!function_exists('str_cut_start')) {
      *
      * @return string
      */
-    function str_cut_start(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = false) : string
-    {
+    function str_cut_start(
+        string $str,
+        string $subString = ' ',
+        bool $repeat = false,
+        bool $caseSensitive = false
+    ) : string {
         return Str::cutStart($str, $subString, $repeat, $caseSensitive);
     }
 }
@@ -91,8 +95,12 @@ if (!function_exists('str_cut_end')) {
      *
      * @return string
      */
-    function str_cut_end(string $str, string $subString = ' ', bool $repeat = false, bool $caseSensitive = false) : string
-    {
+    function str_cut_end(
+        string $str,
+        string $subString = ' ',
+        bool $repeat = false,
+        bool $caseSensitive = false
+    ) : string {
         return Str::cutEnd($str, $subString, $repeat, $caseSensitive);
     }
 }
